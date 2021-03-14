@@ -6,13 +6,15 @@
       @change-sort-type="setActiveFilter"
     />
     <hr>
-    <influencer-list :influencers="sortedInfluencers" />
+    <loader v-if="!influencersLoaded" />
+    <influencer-list :influencers="sortedInfluencers" v-if="influencersLoaded" />
   </div>
 </template>
 
-<script >
+<script>
 import FilterList from './components/FilterList'
 import InfluencerList from './components/InfluencerList'
+import Loader from './components/Loader.vue'
 import FieldService from './FieldService'
 
 const fieldService = new FieldService()
@@ -21,9 +23,11 @@ export default {
   name: 'App',
   components: {
     FilterList,
-    InfluencerList
+    InfluencerList,
+    Loader
   },
   data: () => ({
+    influencersLoaded: false,
     filters: [
       {
         id: 1,
@@ -62,6 +66,7 @@ export default {
   },
   async created () {
     this.influencers = await fieldService.getInfluencers()
+    this.influencersLoaded = true
   }
 }
 </script>

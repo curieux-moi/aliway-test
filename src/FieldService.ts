@@ -58,7 +58,7 @@ export default class FieldService {
       setTimeout(() => {
         const clonedInfluencers = this.influencers.map(influencer => influencer)
         resolve(clonedInfluencers)
-      }, 10)
+      }, 1000)
     })
   }
 

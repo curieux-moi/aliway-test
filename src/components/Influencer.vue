@@ -27,6 +27,16 @@ export default {
   border-radius: 50%;
 }
 
+.influencer {
+  padding: 25px 0;
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    background: #d8f3fdab;
+  }
+}
+
 .influencer, .influencer__info {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

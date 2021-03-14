@@ -28,13 +28,11 @@ export default {
       {
         id: 1,
         title: 'Подписчиков',
-        descending: true,
         value: 'followers'
       },
       {
         id: 2,
         title: 'Рейтинг увлеченности',
-        descending: true,
         value: 'er'
       }
     ],
@@ -70,9 +68,9 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0 50px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
   color: #2c3e50;
 }
 </style>

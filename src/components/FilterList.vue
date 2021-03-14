@@ -1,13 +1,19 @@
 <template>
   <div class="filter-list">
     <span>Всего найдено: {{ totalItems }}</span>
-    <filter-list-item
+
+    <div
+      class="filter-list__wrapper"
       v-for="filter in filters"
       :key="filter.id"
-      :filter="filter"
-      :active="activeFilter.id === filter.id"
-      @click.native="setActiveFilter(filter)"
-    />
+    >
+      <filter-list-item
+        :filter="filter"
+        :active="activeFilter.id === filter.id"
+        @click.native="setActiveFilter(filter)"
+      />
+    </div>
+
   </div>
 </template>
 
@@ -54,5 +60,10 @@ export default {
 .filter-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  padding: 50px 0;
+
+  &__wrapper {
+    display: flex;
+  }
 }
 </style>

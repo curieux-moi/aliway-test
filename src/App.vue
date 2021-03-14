@@ -47,13 +47,6 @@ export default {
       if (filterFound) {
         this.sortBy = { field: filterFound.value, ascending: filter.active }
       }
-      // if (filterFound.id === this.activeFilter.id) {
-      //   this.activeFilter.sortType === 'desc'
-      //     ? this.activeFilter.sortType = 'asc'
-      //     : this.activeFilter.sortType = 'desc'
-      // } else {
-      //   this.activeFilter = { ...filterFound, sortType: 'asc' }
-      // }
     }
   },
   computed: {
